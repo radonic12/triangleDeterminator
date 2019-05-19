@@ -12,12 +12,12 @@
     
     // Alert for when retrieval of triangle is succesful
     function displayTriangleType(text){
-      ts.ui.Notification.info('The triangle is a ' + text);
+      ts.ui.Notification.info( text);
     }
 
     // Alert for when retrieval of triangle is unsuccesful
-    function displayError(){
-      ts.ui.Notification.error("Make sure you have added all sides. Use only numbers. Use . as a comma seperator");
+    function displayError(text){
+      ts.ui.Notification.error(text);
     }
     
     // Call to the java function that determines the triangle type based on the length of three sides
@@ -46,7 +46,7 @@
     if(this.status == 200){
       displayTriangleType(Http.responseText);
     }else{
-      displayError(); 
+      displayError(Http.responseText); 
     }
     }
     

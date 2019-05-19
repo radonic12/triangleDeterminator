@@ -13,24 +13,43 @@
       triangleType = "Scalene triangle";
     }
 
-    return triangleType;
+    return "The triangle is a " + triangleType;
 
   }
 
 %>
 
 <%   
+ 
+  Double a = 0.0;
+  Double b = 0.0;
+  Double c = 0.0;
+
+  try{
+    a = Double.parseDouble(request.getParameter("a"));
+    b = Double.parseDouble(request.getParameter("b"));
+    c = Double.parseDouble(request.getParameter("c"));
+  } catch(Exception e) {
+    //Block of code to handle errors
+    out.print("Missing input or wrong format! \n \n Input all three sides, use only numbers & use . as a comma seperator");
+    response.setStatus(404);
+    return;
+  } 
+
+  if(a <= 0 || b <= 0 || c <= 0 ){
+    out.print("Your input has to be > 0");
+    response.setStatus(405);
+    return;
+  }
   
   try{
-    Double a = Double.parseDouble(request.getParameter("a"));
-    Double b = Double.parseDouble(request.getParameter("b"));
-    Double c = Double.parseDouble(request.getParameter("c"));
     out.print(determineTrinagle(a,b,c));
-  }
-  catch(Exception e) {
+  }catch(Exception e) {
     //  Block of code to handle errors
-    response.sendError(404, "Error! Make sure you have added all sides. Use only numbers. Use . as a comma seperator" );
-  }
+    out.print("The function failed. Please try again");
+    response.setStatus(500);
+  } 
+  
   
 
 
