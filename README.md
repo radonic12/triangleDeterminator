@@ -12,4 +12,4 @@ To run the project:
 4. Visit http://localhost:8080/solution/
 
 
-If you want to see a running version of the webapp see this [screenrecording](https://www.dropbox.com/home/opgave%20til%20samtale/Tradeshift?preview=TriangleDeterminator.mov)
+If you want to see a running version of the webapp see this [screenrecording](https://www.dropbox.com/s/8pjd14zb1fmopv2/TriangleDeterminator.mov?dl=0)
